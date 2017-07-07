@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lc="clr-namespace:Piolhos.App.Core.Components;assembly=Piolhos.App.Core"
+             x:Class="Piolhos.App.Views.ParceiroPage"
+             Title="Piolho Point">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout>
+                <Image Source="{Binding Model.Imagem}" 
+                       Aspect="AspectFill"
+                       BackgroundColor="#ddd" />
+                <StackLayout Spacing="0" Padding="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="4*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding Model.Logo}" 
+                               Aspect="AspectFit" 
+                               Grid.Row="0"
+                               Grid.Column="0"/>
+                        <StackLayout Spacing="0" 
+                                     Grid.Row="0" 
+                                     Grid.Column="1" 
+                                     VerticalOptions="CenterAndExpand">
+                            <Label Text="{Binding Model.Nome}" 
+                                   Style="{StaticResource TitlePrimaryStyle}" 
+                                   HorizontalOptions="Start" 
+                                   LineBreakMode="TailTruncation"/>
+                            <Label Text="{Binding Model.Slogan}" 
+                                   Style="{StaticResource SubtitlePrimaryStyle}" 
+                                   IsVisible="{Binding SlogaIsVisible }" />
+                            <Frame BackgroundColor="#ddd" 
+                                   Padding="3"
+                                   CornerRadius="3"
+                                   HasShadow="False"
+                                   HorizontalOptions="Start">
+                                <Frame.Content>
+                                    <Label Text="{Binding Model.Categoria}" 
+                                           Style="{StaticResource ItalicStyle}" />
+                                </Frame.Content>
+                            </Frame>
+                        </StackLayout>
+                </Grid>
+                </StackLayout>
+
+                <StackLayout Padding="10" BackgroundColor="#eaeaea">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal"
+                                     IsVisible="{Binding TelefoneIsVisible}">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TelefoneCommand}" />
+                            </StackLayout.GestureRecognizers>
+                            
+                            <Image Source="fa_phone.png" HeightRequest="16" />
+                            <lc:HtmlLabel IsUnderlined="True"  Text="{Binding Model.Telefone}" 
+                                          Style="{StaticResource SubtitlePrimaryStyle}" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" 
+                                     HorizontalOptions="EndAndExpand"
+                                     IsVisible="{Binding SiteIsVisible}">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SiteCommand}" />
+                            </StackLayout.GestureRecognizers>
+                            
+                            <Image Source="fa_link.png" HeightRequest="16" />
+                            <lc:HtmlLabel IsUnderlined="True" Text="Site" 
+                                          Style="{StaticResource SubtitlePrimaryStyle}" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="EndAndExpand"
+                                     IsVisible="{Binding FacebookIsVisible}">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding FacebookCommand}" />
+                            </StackLayout.GestureRecognizers>
+
+                            <Image Source="fa_facebook.png" HeightRequest="16" />
+                            <lc:HtmlLabel IsUnderlined="True" Text="Facebook" 
+                                          Style="{StaticResource SubtitlePrimaryStyle}" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal"
+                                 IsVisible="{Binding EnderecoIsVisible}">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding EnderecoCommand}" />
+                        </StackLayout.GestureRecognizers>
+                        
+                        <Image Source="fa_map.png" HeightRequest="16" />
+                        <lc:HtmlLabel IsUnderlined="True" Text="{Binding Model.Endereco}" 
+                                      Style="{StaticResource SubtitlePrimaryStyle}" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="10"
+                             IsVisible="{Binding DescricaoIsVisible}">
+                    <Label Text="Descrição" 
+                           Style="{StaticResource TitlePrimaryStyle}"  />
+
+                    <lc:HtmlLabel Text="{Binding Model.Descricao}" 
+                                  Style="{StaticResource TextStyle}" />
+                </StackLayout>
+
+                <BoxView HeightRequest="1"
+                         BackgroundColor="#eaeaea"
+                         HorizontalOptions="FillAndExpand" 
+                         IsVisible="{Binding BeneficiosIsVisible}" />
+
+                <StackLayout Padding="10" 
+                             Spacing="0"
+                             IsVisible="{Binding BeneficiosIsVisible}" >
+                    <Label Text="Benefícios" 
+                           Style="{StaticResource TitlePrimaryStyle}"  />
+
+                    <Label Text="{Binding Model.Beneficio1}" 
+                           Style="{StaticResource SubtitleStyle}" 
+                           IsVisible="{Binding Beneficio1IsVisible}" />
+                    <Label Text="{Binding Model.Beneficio2}" 
+                           Style="{StaticResource SubtitleStyle}" 
+                           IsVisible="{Binding Beneficio2IsVisible}" />
+                    <Label Text="{Binding Model.Beneficio3}" 
+                           Style="{StaticResource SubtitleStyle}" 
+                           IsVisible="{Binding Beneficio3IsVisible}" />
+                </StackLayout>
+
+                <BoxView HeightRequest="1"
+                         BackgroundColor="#eaeaea"
+                         HorizontalOptions="FillAndExpand" />
+
+                <StackLayout Padding="10" Spacing="0">
+                    <Label Text="Avaliações" 
+                           Style="{StaticResource TitlePrimaryStyle}"  />
+
+                    <lc:Rating IconEmpty="fa_star_empty.png" 
+                               IconHalf="fa_star_half.png" 
+                               IconFull="fa_star_full.png"    
+                               Value="{Binding Model.ValorAvaliacoes}" />
+
+                    <Label Text="{Binding MsgAvaliacoes}" 
+                           Style="{StaticResource ItalicStyle}" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

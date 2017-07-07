@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lc="clr-namespace:Piolhos.App.Core.Converters;assembly=Piolhos.App.Core"
+             x:Class="Piolhos.App.Views.LoginPage"
+             ControlTemplate="{StaticResource WaitingTemplate}"
+             Title="Fazer Login">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Entrar" Command="{Binding LoginCommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource" Android="icon_check.png"></OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout Padding="10"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand"
+                         Style="{StaticResource MenuStackLayoutStyle}">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Image Source="login.png" HorizontalOptions="Center"/>
+                    <Label Text="Telefone" />
+                    <Entry Text="{Binding Model.Telefone, Converter={lc:TelephoneConverter}}" 
+                       Placeholder="DDD+Número"
+                       Keyboard="Telephone" 
+                       HorizontalOptions="FillAndExpand" 
+                       Style="{StaticResource EntryStyle}" />
+                    <Label Text="Senha" />
+                    <Entry Text="{Binding Model.Senha}"
+                       Placeholder="Sua Senha"
+                       IsPassword="True" 
+                       HorizontalOptions="FillAndExpand"
+                       Style="{StaticResource EntryStyle}"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

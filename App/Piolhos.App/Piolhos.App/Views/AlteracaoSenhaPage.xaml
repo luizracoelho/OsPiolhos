@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lc="clr-namespace:Piolhos.App.Core.Converters;assembly=Piolhos.App.Core"
+             x:Class="Piolhos.App.Views.AlteracaoSenhaPage"
+             ControlTemplate="{StaticResource WaitingTemplate}"
+             Title="Alterar Senha">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Confirmar" Icon="icon_check.png" Command="{Binding AlterarSenhaCommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource" Android="icon_check.png"></OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout Padding="10"
+                         HorizontalOptions="FillAndExpand"
+                         Style="{StaticResource MenuStackLayoutStyle}">
+                <Label Text="Senha Atual" />
+                <Entry Text="{Binding SenhaAtual}"
+                       IsPassword="True" 
+                       HorizontalOptions="FillAndExpand"
+                       Style="{StaticResource EntryStyle}"/>
+                <Label Text="Nova Senha" />
+                <Entry Text="{Binding Model.Senha}"
+                       IsPassword="True" 
+                       HorizontalOptions="FillAndExpand"
+                       Style="{StaticResource EntryStyle}"/>
+                <Label Text="Confirmar Nova Senha" />
+                <Entry Text="{Binding ConfirmarSenha}"
+                       IsPassword="True" 
+                       HorizontalOptions="FillAndExpand"
+                       Style="{StaticResource EntryStyle}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

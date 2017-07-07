@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X5k-f2-b5h">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="gAE-YM-kbH">
+            <objects>
+                <viewController id="X5k-f2-b5h" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y8P-hJ-Z43"/>
+                        <viewControllerLayoutGuide type="bottom" id="9ZL-r4-8FZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yd7-JS-zBw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="48" translatesAutoresizingMaskIntoConstraints="NO" image="Default.png" misplaced="YES">
+                                <rect key="frame" x="45" y="72" width="678" height="879"/>
+                                <variation key="heightClass=regular-widthClass=regular" image="Default-Portrait.png"/>
+                            </imageView>
+                        </subviews>
+                        <color key="tintColor" colorSpace="calibratedRGB" red="0" green="0.52549019607843139" blue="1" alpha="1"/>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.796078431372549" blue="0.0196078431372549" alpha="1"/>
+                        <constraints>
+                            <constraint id="49" firstItem="48" firstAttribute="top" secondItem="Y8P-hJ-Z43" secondAttribute="bottom" constant="52"/>
+                            <constraint id="50" firstItem="9ZL-r4-8FZ" firstAttribute="top" secondItem="48" secondAttribute="bottom" constant="73"/>
+                            <constraint id="51" firstItem="48" firstAttribute="leading" secondItem="yd7-JS-zBw" secondAttribute="leadingMargin" constant="25"/>
+                            <constraint id="52" firstItem="yd7-JS-zBw" firstAttribute="trailingMargin" secondItem="48" secondAttribute="trailing" constant="25"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAI-xm-WK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="349" y="339"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon-60.png" width="60" height="60"/>
+        <image name="Default-568h.png" width="320" height="568"/>
+        <image name="Default-Portrait.png" width="768" height="1004"/>
+        <image name="Default.png" width="320" height="480"/>
+        <image name="home_fundo.jpg" width="1450" height="900"/>
+        <image name="Icon-76.png" width="76" height="76"/>
+        <image name="Icon-Small-40.png" width="40" height="40"/>
+        <image name="Icon-Small.png" width="29" height="29"/>
+        <image name="icon_check.png" width="24" height="24"/>
+        <image name="icon_chevron_right.png" width="24" height="24"/>
+        <image name="icon_close.png" width="24" height="24"/>
+        <image name="icon_flame.png" width="24" height="24"/>
+        <image name="icon_flame_enabled.png" width="24" height="24"/>
+        <image name="icon_heart.png" width="24" height="24"/>
+        <image name="icon_heart_enabled.png" width="24" height="24"/>
+        <image name="icon_key.png" width="24" height="24"/>
+        <image name="icon_person.png" width="24" height="24"/>
+        <image name="icon_pricetags.png" width="24" height="24"/>
+        <image name="icon_pricetags_enabled.png" width="24" height="24"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

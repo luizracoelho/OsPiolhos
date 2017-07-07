@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Piolhos.App.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--NavigationPage-->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#000"/>
+                <Setter Property="BarTextColor" Value="#ffcb05"/>
+                <Setter Property="Tint" Value="#ffcb05"/>
+            </Style>
+            <!--Label-->
+            <Style x:Key="MenuTitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#ffcb05" />
+                <Setter Property="Font" Value="20" />
+            </Style>
+            <Style x:Key="MenuItemStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#000" />
+                <Setter Property="Font" Value="Bold, 16" />
+                <Setter Property="Margin" Value="0,8,0,8" />
+            </Style>
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="Font" Value="Bold, 17" />
+                <Setter Property="TextColor" Value="#000" />
+            </Style>
+            <Style x:Key="TitlePrimaryStyle" TargetType="Label">
+                <Setter Property="Font" Value="Bold, 20" />
+                <Setter Property="TextColor" Value="#ffcb05" />
+            </Style>
+            <Style x:Key="SubtitleStyle" TargetType="Label">
+                <Setter Property="Font" Value="15" />
+                <Setter Property="TextColor" Value="#000" />
+            </Style>
+            <Style x:Key="SubtitlePrimaryStyle" TargetType="Label">
+                <Setter Property="Font" Value="16" />
+                <Setter Property="TextColor" Value="#000" />
+            </Style>
+            <Style x:Key="ItalicStyle" TargetType="Label">
+                <Setter Property="Font" Value="Italic, 13" />
+                <Setter Property="TextColor" Value="#000" />
+            </Style>
+            <Style x:Key="TextStyle" TargetType="Label">
+                <Setter Property="Font" Value="14" />
+                <Setter Property="TextColor" Value="#000" />
+            </Style>
+            <Style x:Key="DistanceStyle" TargetType="Label">
+                <Setter Property="Font" Value="Bold,13" />
+                <Setter Property="TextColor" Value="#ffcb05" />
+            </Style>
+            <!--Entry-->
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="#fff" />
+            </Style>
+            <!--Button-->
+            <Style x:Key="ButtonPrimaryStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#ffcb05" />
+                <Setter Property="TextColor" Value="#000" />
+                <Setter Property="HeightRequest" Value="60" />
+            </Style>
+            <Style x:Key="ButtonSecondaryStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#000" />
+                <Setter Property="TextColor" Value="#ffcb05" />
+                <Setter Property="HeightRequest" Value="60" />
+            </Style>
+            <!--StackLayout-->
+            <Style x:Key="MenuStackLayoutStyle" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="#ffcb05" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+            <!--ActivityIndicator-->
+            <Style x:Key="ActivityIndicatorStyle" TargetType="ActivityIndicator">
+                <Setter Property="Color" Value="#ffcb05" />
+            </Style>
+            <!--PageTemplates-->
+            <ControlTemplate x:Key="WaitingTemplate">
+                <AbsoluteLayout>
+                    <ContentView AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                                 AbsoluteLayout.LayoutFlags="All">
+                        <ContentPresenter />
+                    </ContentView>
+                    <ContentView IsVisible="{TemplateBinding BindingContext.IsWaiting}" 
+                                 AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                                 AbsoluteLayout.LayoutFlags="All" 
+                                 BackgroundColor="Black" 
+                                 Opacity="0.7">
+                        <StackLayout HorizontalOptions="CenterAndExpand" 
+                                     VerticalOptions="CenterAndExpand">
+                            <ActivityIndicator IsRunning="True" 
+                                               Style="{StaticResource ActivityIndicatorStyle}" />
+                            <Label Text="Carregando..." 
+                                   HorizontalOptions="CenterAndExpand" 
+                                   TextColor="#ffcb05"/>
+                        </StackLayout>
+                    </ContentView>
+                </AbsoluteLayout>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

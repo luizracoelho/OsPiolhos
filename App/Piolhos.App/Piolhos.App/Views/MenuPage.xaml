@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Piolhos.App.Views.MenuPage"
+             Title="Menu">
+    <ContentPage.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource" iOS="icon_menu.png"></OnPlatform>
+    </ContentPage.Icon>
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource MenuStackLayoutStyle}">
+            <Grid BackgroundColor="#000" 
+                  Margin="-10,-10,-10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="8"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="1"
+                       Grid.Row="1"
+                       Text="Menu"
+                       Style="{StaticResource MenuTitleStyle}"/>
+            </Grid>
+            <ContentView>
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AlterarCadastroCommand}" />
+                </ContentView.GestureRecognizers>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="icon_person.png"></Image>
+                    <Label Text="Alterar Cadastro"
+                           Style="{StaticResource MenuItemStyle}"></Label>
+                    <Image Source="icon_chevron_right.png" HorizontalOptions="EndAndExpand"></Image>
+                </StackLayout>
+            </ContentView>
+            <ContentView>
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AlterarSenhaCommand}" />
+                </ContentView.GestureRecognizers>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="icon_key.png"></Image>
+                    <Label Text="Alterar Senha"
+                           Style="{StaticResource MenuItemStyle}"></Label>
+                    <Image Source="icon_chevron_right.png" HorizontalOptions="EndAndExpand"></Image>
+                </StackLayout>
+            </ContentView>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <BoxView BackgroundColor="#000"
+                         HeightRequest="1"
+                         HorizontalOptions="FillAndExpand"></BoxView>
+                <ContentView>
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SairCommand}" />
+                    </ContentView.GestureRecognizers>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="icon_close.png"></Image>
+                        <Label Text="Sair"
+                           Style="{StaticResource MenuItemStyle}"></Label>
+                        <Image Source="icon_chevron_right.png" HorizontalOptions="EndAndExpand"></Image>
+                        <StackLayout.Padding>
+                            <OnPlatform x:TypeArguments="Thickness" Android="10" iOS="10,10,10,20"></OnPlatform>
+                        </StackLayout.Padding>
+                    </StackLayout>
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

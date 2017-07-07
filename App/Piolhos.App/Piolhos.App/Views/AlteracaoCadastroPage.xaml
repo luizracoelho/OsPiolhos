@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lc="clr-namespace:Piolhos.App.Core.Converters;assembly=Piolhos.App.Core"
+             x:Class="Piolhos.App.Views.AlteracaoCadastroPage"
+             ControlTemplate="{StaticResource WaitingTemplate}"
+             Title="Alterar Cadastro">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Confirmar" Icon="icon_check.png" Command="{Binding AlterarCadastroCommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource" Android="icon_check.png"></OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout Padding="10"
+                         HorizontalOptions="FillAndExpand"
+                         Style="{StaticResource MenuStackLayoutStyle}">
+                <Label Text="Nome" />
+                <Entry Text="{Binding Model.Nome}"
+                       Placeholder="Piolho da Silva"
+                       HorizontalOptions="FillAndExpand"
+                       Style="{StaticResource EntryStyle}"/>
+                <Label Text="E-Mail" />
+                <Entry Text="{Binding Model.Email}"
+                       Placeholder="piolho@ospiolhos.com.br"
+                       HorizontalOptions="FillAndExpand"
+                       Keyboard="Email"
+                       Style="{StaticResource EntryStyle}"/>
+                <Label Text="Telefone" />
+                <Entry Text="{Binding Model.Telefone, Converter={lc:TelephoneConverter}}" 
+                       Placeholder="Número"
+                       Keyboard="Telephone" 
+                       HorizontalOptions="FillAndExpand" 
+                       Style="{StaticResource EntryStyle}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

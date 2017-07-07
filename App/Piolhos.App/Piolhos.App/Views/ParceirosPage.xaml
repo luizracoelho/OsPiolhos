@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Piolhos.App.Views.ParceirosPage"
+             Title="Parceiros">
+
+    <ContentPage.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource" iOS="icon_location.png"></OnPlatform>
+    </ContentPage.Icon>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Pesquisar"
+                       Text="{Binding Search}" 
+                       CancelButtonColor="#000000"></SearchBar>
+
+            <Label Text="{Binding ErrorMessage}"
+                   IsVisible="{Binding ErrorIsVisible}"
+                   XAlign="Center"
+                   Margin="10,0,10,0"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"></Label>
+
+            <ListView ItemsSource="{Binding Model}" SelectedItem="{Binding Item}" ItemTapped="OnItemTapped" HasUnevenRows="true" IsPullToRefreshEnabled="true" RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing, Mode=OneWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10,20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="4*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding Logo}" 
+                                       Aspect="AspectFit" />
+                                <StackLayout Spacing="0" 
+                                             Grid.Row="0" 
+                                             Grid.Column="1">
+                                    <Label Text="{Binding Nome}" 
+                                           Style="{StaticResource TitleStyle}"  />
+                                    <Label Text="{Binding Slogan}" 
+                                           Style="{StaticResource SubtitleStyle}" />
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame BackgroundColor="#000" 
+                                               Padding="3"
+                                               CornerRadius="3"
+                                               HasShadow="False"
+                                               HorizontalOptions="Start">
+                                            <Frame.Content>
+                                                <Label Text="{Binding DistanciaString}" 
+                                                       Style="{StaticResource DistanceStyle}" />
+                                            </Frame.Content>
+                                        </Frame>
+                                        <Frame BackgroundColor="#ddd" 
+                                               Padding="3"
+                                               CornerRadius="3"
+                                               HasShadow="False"
+                                               HorizontalOptions="Start">
+                                            <Frame.Content>
+                                                <Label Text="{Binding Categoria}" 
+                                               Style="{StaticResource ItalicStyle}" />
+                                            </Frame.Content>
+                                        </Frame>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

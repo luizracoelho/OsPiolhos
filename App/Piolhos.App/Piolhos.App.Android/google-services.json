@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "537007328900",
+    "firebase_url": "https://os-piolhos.firebaseio.com",
+    "project_id": "os-piolhos",
+    "storage_bucket": "os-piolhos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537007328900:android:08ab18baae5590c0",
+        "android_client_info": {
+          "package_name": "br.eti.onsoft.ospiolhos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537007328900-sve5vfqr8u1a487ig27kh65j43ld765t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNCvnqSswNiUEzcOOexrv44BdlcFv6UAE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
