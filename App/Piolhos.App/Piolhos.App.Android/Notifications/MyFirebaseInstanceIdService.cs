@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Util;
 using Firebase.Iid;
 
 namespace Piolhos.App.Droid.Notifications
@@ -7,21 +8,19 @@ namespace Piolhos.App.Droid.Notifications
     [IntentFilter(new[] { "com.google.firebase.INSTANCE_ID_EVENT" })]
     public class MyFirebaseInstanceIdService : FirebaseInstanceIdService
     {
-        const string TAG = "MyFirebaseIIDService";
+        const string TAG = "MyFirebaseIdService";
 
         public override void OnTokenRefresh()
         {
-            // Get updated InstanceID token.
             var refreshedToken = FirebaseInstanceId.Instance.Token;
-            Android.Util.Log.Debug(TAG, "Refreshed token: " + refreshedToken);
+            Log.Debug(TAG, "Refreshed token: " + refreshedToken);
 
-            // TODO: Implement this method to send any registration to your app's servers.
             SendRegistrationToServer(refreshedToken);
         }
 
-        void SendRegistrationToServer(string token)
+        void SendRegistrationToServer(string refreshedToken)
         {
-            // Add custom implementation, as needed.
+
         }
     }
 }
