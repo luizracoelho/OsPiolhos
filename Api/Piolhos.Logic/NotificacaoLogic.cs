@@ -26,7 +26,8 @@ namespace Piolhos.Logic
                     {
                         title = title,
                         body = message,
-                        sound = "default"
+                        sound = "default",
+                        icon = "smallicon"
                     },
                     data = new
                     {

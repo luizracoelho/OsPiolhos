@@ -34,7 +34,7 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Onsoft.Security">
-      <HintPath>..\..\..\..\..\Framework\Onsoft\Onsoft.Security\bin\Debug\Onsoft.Security.dll</HintPath>
+      <HintPath>..\packages\Onsoft.Security\Onsoft.Security.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -55,13 +55,13 @@
     <Compile Include="UsuarioLogic.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Piolhos.csproj">
-      <Project>{f8f8be9a-f27d-46bf-91b9-5bc329f4e107}</Project>
-      <Name>Piolhos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Piolhos.Repository\Piolhos.Repository.csproj">
       <Project>{05bf639d-f393-47ff-97e8-44f0efe085a6}</Project>
       <Name>Piolhos.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Piolhos\Piolhos.csproj">
+      <Project>{f8f8be9a-f27d-46bf-91b9-5bc329f4e107}</Project>
+      <Name>Piolhos</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

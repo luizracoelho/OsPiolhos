@@ -69,9 +69,8 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Piolhos.csproj">
+    <ProjectReference Include="..\Piolhos\Piolhos.csproj">
       <Project>{f8f8be9a-f27d-46bf-91b9-5bc329f4e107}</Project>
       <Name>Piolhos</Name>
     </ProjectReference>
