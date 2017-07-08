@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="br.eti.onsoft.ospiolhos" android:versionCode="1" android:versionName="1.0.0">
-	<uses-sdk android:minSdkVersion="15" />
-	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="Os Piolhos" android:icon="@drawable/icon">
+  <uses-sdk android:minSdkVersion="15" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <application android:label="Os Piolhos" android:icon="@drawable/icon">
     <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false" />
     <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND" >
       <intent-filter>
@@ -11,5 +11,12 @@
         <category android:name="${applicationId}" />
       </intent-filter>
     </receiver>
+    <meta-data
+        android:name="com.google.firebase.messaging.default_notification_icon"
+        android:resource="@drawable/smallicon" />
+    <meta-data
+        android:name="com.google.firebase.messaging.default_notification_color"
+        android:resource="@color/accent" />
+
   </application>
 </manifest>
