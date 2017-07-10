@@ -2193,26 +2193,8 @@ namespace Piolhos.App.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f02008e
-			public const int avd_hide_password_1 = 2130837646;
-			
-			// aapt resource value: 0x7f02008f
-			public const int avd_hide_password_2 = 2130837647;
-			
-			// aapt resource value: 0x7f020090
-			public const int avd_hide_password_3 = 2130837648;
-			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
-			
-			// aapt resource value: 0x7f020091
-			public const int avd_show_password_1 = 2130837649;
-			
-			// aapt resource value: 0x7f020092
-			public const int avd_show_password_2 = 2130837650;
-			
-			// aapt resource value: 0x7f020093
-			public const int avd_show_password_3 = 2130837651;
 			
 			// aapt resource value: 0x7f020055
 			public const int common_full_open_on_phone = 2130837589;
@@ -3294,27 +3276,6 @@ namespace Piolhos.App.Droid
 			
 			// aapt resource value: 0x7f070010
 			public const int common_signin_button_text_long = 2131165200;
-			
-			// aapt resource value: 0x7f07003e
-			public const int default_web_client_id = 2131165246;
-			
-			// aapt resource value: 0x7f07003f
-			public const int firebase_database_url = 2131165247;
-			
-			// aapt resource value: 0x7f07003c
-			public const int gcm_defaultSenderId = 2131165244;
-			
-			// aapt resource value: 0x7f070040
-			public const int google_api_key = 2131165248;
-			
-			// aapt resource value: 0x7f07003d
-			public const int google_app_id = 2131165245;
-			
-			// aapt resource value: 0x7f070041
-			public const int google_crash_reporting_api_key = 2131165249;
-			
-			// aapt resource value: 0x7f070042
-			public const int google_storage_bucket = 2131165250;
 			
 			// aapt resource value: 0x7f070035
 			public const int password_toggle_content_description = 2131165237;

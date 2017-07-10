@@ -3,7 +3,6 @@ using Foundation;
 using System;
 using UIKit;
 using UserNotifications;
-using Xamarin.Forms;
 
 namespace Piolhos.App.iOS
 {
@@ -42,8 +41,8 @@ namespace Piolhos.App.iOS
                 UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
             }
 
-                UIApplication.SharedApplication.RegisterForRemoteNotifications();
-            
+            UIApplication.SharedApplication.RegisterForRemoteNotifications();
+
             // Firebase component initialize
             Firebase.Analytics.App.Configure();
 
@@ -56,6 +55,7 @@ namespace Piolhos.App.iOS
                 ConnectFCM();
             });
 
+            app.StatusBarHidden = false;
 
             return base.FinishedLaunching(app, options);
         }
@@ -73,7 +73,12 @@ namespace Piolhos.App.iOS
 
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
         {
-            Firebase.InstanceID.InstanceId.SharedInstance.SetApnsToken(deviceToken, Firebase.InstanceID.ApnsTokenType.Prod);
+#if DEBUG
+            Firebase.InstanceID.InstanceId.SharedInstance.SetApnsToken(deviceToken, Firebase.InstanceID.ApnsTokenType.Sandbox);
+#endif
+#if RELEASE
+			Firebase.InstanceID.InstanceId.SharedInstance.SetApnsToken(deviceToken, Firebase.InstanceID.ApnsTokenType.Prod);
+#endif
 
             var token = Firebase.InstanceID.InstanceId.SharedInstance.Token;
         }
