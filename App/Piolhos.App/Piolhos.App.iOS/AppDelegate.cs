@@ -3,6 +3,7 @@ using Foundation;
 using System;
 using UIKit;
 using UserNotifications;
+using Xamarin.Forms;
 
 namespace Piolhos.App.iOS
 {
@@ -10,7 +11,7 @@ namespace Piolhos.App.iOS
     // User Interface of the application, as well as listening (and optionally responding) to 
     // application events from iOS.
     [Register("AppDelegate")]
-    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IUNUserNotificationCenterDelegate
+    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IUNUserNotificationCenterDelegate, IMessagingDelegate
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
@@ -30,6 +31,8 @@ namespace Piolhos.App.iOS
 
                 // For iOS 10 display notification (sent via APNS)
                 UNUserNotificationCenter.Current.Delegate = this;
+
+                Messaging.SharedInstance.RemoteMessageDelegate = this;
             }
             else
             {
@@ -39,8 +42,8 @@ namespace Piolhos.App.iOS
                 UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
             }
 
-            UIApplication.SharedApplication.RegisterForRemoteNotifications();
-
+                UIApplication.SharedApplication.RegisterForRemoteNotifications();
+            
             // Firebase component initialize
             Firebase.Analytics.App.Configure();
 
@@ -53,8 +56,10 @@ namespace Piolhos.App.iOS
                 ConnectFCM();
             });
 
+
             return base.FinishedLaunching(app, options);
         }
+
         public override void DidEnterBackground(UIApplication uiApplication)
         {
             Messaging.SharedInstance.Disconnect();
@@ -123,6 +128,10 @@ namespace Piolhos.App.iOS
         {
             var alert = new UIAlertView(title ?? "Notificação", message ?? "Message", null, "OK");
             alert.Show();
+        }
+
+        public void ApplicationReceivedRemoteMessage(RemoteMessage remoteMessage)
+        {
         }
     }
 }
