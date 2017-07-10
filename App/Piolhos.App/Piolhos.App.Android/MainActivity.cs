@@ -9,25 +9,28 @@ using Android.OS;
 using Android.Util;
 using Plugin.Permissions;
 using System.Threading.Tasks;
-using Android.Content;
-using Firebase.Messaging;
-using Firebase.Iid;
 using Firebase;
+using Firebase.Iid;
+using Firebase.Messaging;
+using Android.Content;
 using Piolhos.App.Droid.Notifications;
 
 namespace Piolhos.App.Droid
 {
     [Activity(Icon = "@drawable/icon", Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
-	{
-        protected override void OnCreate (Bundle bundle)
-		{
-			TabLayoutResource = Resource.Layout.Tabbar;
-			ToolbarResource = Resource.Layout.Toolbar; 
+    {
+        public static MainActivity instance;
+        protected override void OnCreate(Bundle bundle)
+        {
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
 
-			base.OnCreate (bundle);
+            base.OnCreate(bundle);
 
-			global::Xamarin.Forms.Forms.Init (this, bundle);
+            instance = instance ?? this;
+
+            global::Xamarin.Forms.Forms.Init(instance, bundle);
 
             var senderId = "537007328900";
 
@@ -37,9 +40,14 @@ namespace Piolhos.App.Droid
                                 .SetGcmSenderId(senderId)
                                 .Build();
 
-            var firebaseApp = FirebaseApp.InitializeApp(this, options);
+            try
+            {
+                FirebaseApp.InitializeApp(instance, options);
+            }
+            catch (Exception) { }
 
-            Task.Run(() => {
+            Task.Run(() =>
+            {
                 var instanceID = FirebaseInstanceId.Instance;
                 instanceID.DeleteInstanceId();
                 var iid1 = instanceID.Token;
@@ -49,8 +57,8 @@ namespace Piolhos.App.Droid
 
             FirebaseMessaging.Instance.SubscribeToTopic("global");
 
-            LoadApplication (new Piolhos.App.App ());
-		}
+            LoadApplication(new Piolhos.App.App());
+        }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {
