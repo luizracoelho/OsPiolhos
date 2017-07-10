@@ -26,7 +26,7 @@ namespace Piolhos.App.Droid.DataAccess
             get
             {
                 if (_platform == null)
-                    _platform = new SQLitePlatformAndroid();
+                    _platform = new SQLitePlatformAndroidN();
 
                 return _platform;
             }

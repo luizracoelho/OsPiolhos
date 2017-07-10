@@ -30,6 +30,8 @@ namespace Piolhos.App.Droid
 			global::PCLStorage.Resource.String.Hello = global::Piolhos.App.Droid.Resource.String.Hello;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::Piolhos.App.Droid.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::Piolhos.App.Droid.Resource.String.Hello;
+			global::SQLite.Net.Platform.XamarinAndroidN.Resource.String.ApplicationName = global::Piolhos.App.Droid.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroidN.Resource.String.Hello = global::Piolhos.App.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Piolhos.App.Droid.Resource.Attribute.actionBarSize;
 		}
 		
