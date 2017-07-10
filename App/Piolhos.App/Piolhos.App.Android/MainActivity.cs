@@ -20,6 +20,7 @@ namespace Piolhos.App.Droid
     [Activity(Icon = "@drawable/icon", Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        public static MainActivity instance;
         protected override void OnCreate(Bundle bundle)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -27,7 +28,9 @@ namespace Piolhos.App.Droid
 
             base.OnCreate(bundle);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
+            instance = instance ?? this;
+
+            global::Xamarin.Forms.Forms.Init(instance, bundle);
 
             var senderId = "537007328900";
 
@@ -37,7 +40,11 @@ namespace Piolhos.App.Droid
                                 .SetGcmSenderId(senderId)
                                 .Build();
 
-            var firebaseApp = FirebaseApp.InitializeApp(this, options);
+            try
+            {
+                FirebaseApp.InitializeApp(instance, options);
+            }
+            catch (Exception) { }
 
             Task.Run(() =>
             {
