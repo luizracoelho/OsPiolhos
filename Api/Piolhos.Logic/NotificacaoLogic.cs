@@ -13,24 +13,27 @@ namespace Piolhos.Logic
         const string serverKey = @"AIzaSyBFZusEjv7heBISksDnuPMY8Zm5h3s8ybI";
         const string senderId = @"537007328900";
 
-        public bool Notificar(string api_key, string title, string message)
+        public bool Notificar(Notificacao notificacao)
         {
+            if (notificacao == null)
+                return false;
+
             var config_api_key = ConfigurationManager.AppSettings["api_key"];
 
-            if (api_key == config_api_key)
+            if (notificacao.ApiKey == config_api_key)
             {
                 var msg = new
                 {
                     to = "/topics/global",
                     notification = new
                     {
-                        title = title,
-                        body = message,
+                        title = notificacao.Titulo,
+                        body = notificacao.Mensagem,
                         sound = "default"
                     },
                     data = new
                     {
-                        title = message
+                        title = notificacao.Mensagem
                     },
                     priority = "high"
                 };
