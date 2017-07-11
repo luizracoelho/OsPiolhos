@@ -25,13 +25,11 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid Padding="10,20">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*" />
-                                    <ColumnDefinition Width="4*" />
-                                </Grid.ColumnDefinitions>
+                            <StackLayout Padding="10, 20"
+                                Orientation="Horizontal">
                                 <Image Source="{Binding Logo}" 
-                                       Aspect="AspectFit" />
+                                       Aspect="AspectFit" 
+                                       WidthRequest="64"/>
                                 <StackLayout Spacing="0" 
                                              Grid.Row="0" 
                                              Grid.Column="1">
@@ -62,7 +60,7 @@
                                         </Frame>
                                     </StackLayout>
                                 </StackLayout>
-                            </Grid>
+                            </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

@@ -8,12 +8,10 @@
         <AbsoluteLayout>
             <Image Source="home_fundo.jpg" 
                    Aspect="Fill"/>
-            <StackLayout Orientation="Horizontal"
+            <StackLayout Padding="10"
+                         Orientation="Horizontal"
                          AbsoluteLayout.LayoutBounds="0,1,1,AutoSize" 
                          AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
-                <StackLayout.Padding>
-                    <OnPlatform x:TypeArguments="Thickness" Android="10" iOS="10,10,10,28"></OnPlatform>
-                </StackLayout.Padding>
 
                 <Button Text="Criar Conta" 
                             HorizontalOptions="FillAndExpand" 

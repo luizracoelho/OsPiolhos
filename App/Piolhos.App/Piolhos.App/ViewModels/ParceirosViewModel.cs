@@ -2,7 +2,6 @@
 using Piolhos.App.ViewModels.Base;
 using Piolhos.App.Views;
 using Plugin.Geolocator;
-using Plugin.Geolocator.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -37,7 +36,7 @@ namespace Piolhos.App.ViewModels
                     {
                         // Obter a posição do GPS
                         var locator = CrossGeolocator.Current;
-                        var position = await locator.GetPositionAsync();
+                        var position = await locator.GetPositionAsync(10000);
 
                         //Recuperar as empresas
                         empresas = await _logic.ListAsync(position.Latitude, position.Longitude);
@@ -54,6 +53,10 @@ namespace Piolhos.App.ViewModels
                                     )
                                     .ToList();
                     }
+
+                    //Definir o logo caso não exista
+                    foreach (var empresa in empresas)
+                        empresa.Logo = empresa.Logo ?? "logo.png";
 
                     Model = new ObservableCollection<Empresa>(empresas);
 
@@ -140,6 +143,7 @@ namespace Piolhos.App.ViewModels
             {
                 return _refreshCommand ?? (_refreshCommand = new Command(() =>
                 {
+                    Search = null;
                     List();
                 }));
             }
