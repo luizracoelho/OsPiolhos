@@ -11,14 +11,11 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
@@ -27,40 +24,43 @@
 	<key>CFBundleIdentifier</key>
 	<string>br.eti.onsoft.ospiolhos</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.0</string>
+	<string>1.0.2</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon-60@2x.png</string>
 		<string>Icon-60@3x.png</string>
+		<string>Icon-72.png</string>
+		<string>Icon-72@2x.png</string>
 		<string>Icon-76.png</string>
 		<string>Icon-76@2x.png</string>
+		<string>Icon-83.5@2x.png</string>
 		<string>Default.png</string>
 		<string>Default@2x.png</string>
+		<string>Default-568h.png</string>
 		<string>Default-568h@2x.png</string>
 		<string>Default-Portrait.png</string>
 		<string>Default-Portrait@2x.png</string>
 		<string>Icon-Small-40.png</string>
 		<string>Icon-Small-40@2x.png</string>
 		<string>Icon-Small-40@3x.png</string>
+		<string>Icon-Small-50.png</string>
+		<string>Icon-Small-50@2x.png</string>
 		<string>Icon-Small.png</string>
 		<string>Icon-Small@2x.png</string>
 		<string>Icon-Small@3x.png</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen.storyboard</string>
+	<string>LaunchScreen</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1</string>
+	<string>3</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
 	<key>XSAppIconAssets</key>
 	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Listaremos os points próximos a você!</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Listaremos os points próximos a você!</string>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>location</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UIStatusBarStyle</key>
@@ -68,6 +68,8 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>UIRequiresFullScreen</key>
 	<true/>
 </dict>
 </plist>

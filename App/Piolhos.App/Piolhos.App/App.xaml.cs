@@ -11,9 +11,6 @@ namespace Piolhos.App
 		{
 			InitializeComponent();
 
-            var locator = CrossGeolocator.Current;
-            locator.AllowsBackgroundUpdates = true;
-
             MainPage = new NavigationPage(new HomePage());
 		}
 

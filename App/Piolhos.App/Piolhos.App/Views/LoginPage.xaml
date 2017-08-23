@@ -18,8 +18,7 @@
         <ScrollView VerticalOptions="FillAndExpand">
             <StackLayout Padding="10"
                          HorizontalOptions="FillAndExpand"
-                         VerticalOptions="FillAndExpand"
-                         Style="{StaticResource MenuStackLayoutStyle}">
+                         VerticalOptions="FillAndExpand">
                 <StackLayout VerticalOptions="CenterAndExpand">
                     <Image Source="login.png" HorizontalOptions="Center"/>
                     <Label Text="Telefone" />

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Piolhos.App.Views.HomePageOld"
+             ControlTemplate="{StaticResource WaitingTemplate}"
+             Title="Os Piolhos">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="home_fundo.jpg" 
+                   Aspect="Fill"/>
+            <StackLayout Padding="10"
+                         Orientation="Horizontal"
+                         AbsoluteLayout.LayoutBounds="0,1,1,AutoSize" 
+                         AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+
+                <Button Text="Criar Conta" 
+                            HorizontalOptions="FillAndExpand" 
+                            Style="{StaticResource ButtonSecondaryStyle}" 
+                            Command="{Binding CadastroCommand}" />
+                <Button Text="Entrar" 
+                            HorizontalOptions="FillAndExpand" 
+                            Style="{StaticResource ButtonPrimaryStyle}" 
+                            Command="{Binding LoginCommand}" />
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

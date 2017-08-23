@@ -1,7 +1,6 @@
 ﻿using Piolhos.App.Core.Logics;
 using Piolhos.App.ViewModels.Base;
 using Piolhos.App.Views;
-using Plugin.Geolocator;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -34,12 +33,8 @@ namespace Piolhos.App.ViewModels
                     IList<Empresa> empresas = new List<Empresa>();
                     if (search == null)
                     {
-                        // Obter a posição do GPS
-                        var locator = CrossGeolocator.Current;
-                        var position = await locator.GetPositionAsync(10000);
-
                         //Recuperar as empresas
-                        empresas = await _logic.ListAsync(position.Latitude, position.Longitude);
+                        empresas = await _logic.ListAsync();
                         _empresasFiltered = empresas;
                     }
                     else

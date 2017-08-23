@@ -17,8 +17,7 @@
     <ContentPage.Content>
         <ScrollView VerticalOptions="FillAndExpand">
             <StackLayout Padding="10"
-                         HorizontalOptions="FillAndExpand"
-                         Style="{StaticResource MenuStackLayoutStyle}">
+                         HorizontalOptions="FillAndExpand">
                 <Label Text="Senha Atual" />
                 <Entry Text="{Binding SenhaAtual}"
                        IsPassword="True" 

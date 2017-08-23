@@ -17,8 +17,7 @@
     <ContentPage.Content>
         <ScrollView VerticalOptions="FillAndExpand">
             <StackLayout Padding="10"
-                         HorizontalOptions="FillAndExpand"
-                         Style="{StaticResource MenuStackLayoutStyle}">
+                         HorizontalOptions="FillAndExpand">
                 <Label Text="Nome" />
                 <Entry Text="{Binding Model.Nome}"
                        Placeholder="Piolho da Silva"
