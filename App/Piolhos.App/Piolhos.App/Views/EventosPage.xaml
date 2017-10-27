@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Piolhos.App.Views.EventosPage"
+             Title="Eventos">
+
+    <ContentPage.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource" iOS="toolbarIconCalendar.png"></OnPlatform>
+    </ContentPage.Icon>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Pesquisar"
+                       Text="{Binding Search}" 
+                       CancelButtonColor="#000000"></SearchBar>
+
+            <Label Text="{Binding ErrorMessage}"
+                   IsVisible="{Binding ErrorIsVisible}"
+                   XAlign="Center"
+                   Margin="10,0,10,0"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"></Label>
+
+            <ListView ItemsSource="{Binding Model}" SelectedItem="{Binding Item}" ItemTapped="OnItemTapped" HasUnevenRows="true" IsPullToRefreshEnabled="true" RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing, Mode=OneWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Titulo}" 
+                                       Style="{StaticResource TitleStyle}"
+                                       Margin="10, 20, 10, 10" />
+                                <ActivityIndicator BindingContext="{x:Reference image}" 
+                                                   IsRunning="{Binding IsLoading}" 
+                                                   IsVisible="{Binding IsLoading}" />
+                                <Image x:Name="image" Source="{Binding Imagem}" 
+                                       Aspect="AspectFill"
+                                       HeightRequest="320" />
+                                <Label Text="{Binding Descricao}" 
+                                       Style="{StaticResource SubtitleStyle}" 
+                                       Margin="10" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

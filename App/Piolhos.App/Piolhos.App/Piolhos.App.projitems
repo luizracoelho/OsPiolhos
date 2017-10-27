@@ -21,6 +21,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AlteracaoCadastroViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HomeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EventosViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PromocoesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ParceirosViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CadastroViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ParceiroViewModel.cs" />
@@ -40,6 +42,9 @@
       <DependentUpon>CadastroPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\EventosPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\HomePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +54,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\ParceirosPage.xaml.cs">
       <DependentUpon>ParceirosPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PromocoesPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\TabPage.xaml.cs">
@@ -134,6 +142,16 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\PromocoesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\EventosPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

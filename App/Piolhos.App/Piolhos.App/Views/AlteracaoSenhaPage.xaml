@@ -7,7 +7,7 @@
              Title="Alterar Senha">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="Confirmar" Icon="icon_check.png" Command="{Binding AlterarSenhaCommand}">
+        <ToolbarItem x:Name="confirmarCommand" Name="Confirmar" Command="{Binding AlterarSenhaCommand}">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource" Android="icon_check.png"></OnPlatform>
             </ToolbarItem.Icon>
@@ -19,20 +19,26 @@
             <StackLayout Padding="10"
                          HorizontalOptions="FillAndExpand">
                 <Label Text="Senha Atual" />
-                <Entry Text="{Binding SenhaAtual}"
+                <Entry x:Name="senhaAtualEntry"
+                       Text="{Binding SenhaAtual}"
                        IsPassword="True" 
                        HorizontalOptions="FillAndExpand"
-                       Style="{StaticResource EntryStyle}"/>
+                       Style="{StaticResource EntryStyle}"
+                       Completed="SenhaAtualEntry_Completed" />
                 <Label Text="Nova Senha" />
-                <Entry Text="{Binding Model.Senha}"
+                <Entry x:Name="senhaEntry"
+                       Text="{Binding Model.Senha}"
                        IsPassword="True" 
                        HorizontalOptions="FillAndExpand"
-                       Style="{StaticResource EntryStyle}"/>
+                       Style="{StaticResource EntryStyle}"
+                       Completed="SenhaEntry_Completed" />
                 <Label Text="Confirmar Nova Senha" />
-                <Entry Text="{Binding ConfirmarSenha}"
+                <Entry x:Name="confirmarSenhaEntry"
+                       Text="{Binding ConfirmarSenha}"
                        IsPassword="True" 
                        HorizontalOptions="FillAndExpand"
-                       Style="{StaticResource EntryStyle}"/>
+                       Style="{StaticResource EntryStyle}"
+                       Completed="ConfirmarSenhaEntry_Completed"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

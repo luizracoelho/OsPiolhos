@@ -16,7 +16,7 @@ namespace Piolhos.App.Core.Services.Base
         /// <returns>Uri</returns>
         private Uri GetUri(string action)
         {
-            string _dev = $"http://192.168.15.14/Piolhos/api/";
+            string _dev = $"http://192.168.15.16/Piolhos/api/";
             string _dist = $"http://ospiolhos.onsoft.ddns.net:8081/api/";
 
             string _baseUrl = _dist;

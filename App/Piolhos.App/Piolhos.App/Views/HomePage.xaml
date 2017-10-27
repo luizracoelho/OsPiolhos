@@ -5,10 +5,6 @@
              ControlTemplate="{StaticResource WaitingTemplate}"
              Title="Piolhos Points">
 
-    <ContentPage.Icon>
-        <OnPlatform x:TypeArguments="FileImageSource" iOS="icon_location.png"></OnPlatform>
-    </ContentPage.Icon>
-
     <ContentPage.Content>
         <StackLayout IsVisible="{Binding IsContentVisible}">
             <SearchBar Placeholder="Pesquisar"
@@ -28,9 +24,12 @@
                         <ViewCell>
                             <StackLayout Padding="10, 20"
                                 Orientation="Horizontal">
-                                <Image Source="{Binding Logo}" 
+                                <Image x:Name="image" Source="{Binding Logo}" 
                                        Aspect="AspectFit" 
                                        WidthRequest="64"/>
+                                <ActivityIndicator BindingContext="{x:Reference image}" 
+                                                   IsRunning="{Binding IsLoading}" 
+                                                   IsVisible="{Binding IsLoading}" />
                                 <StackLayout Spacing="0" 
                                              Grid.Row="0" 
                                              Grid.Column="1">

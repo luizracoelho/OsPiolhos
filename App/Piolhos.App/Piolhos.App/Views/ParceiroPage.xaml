@@ -7,19 +7,25 @@
     <ContentPage.Content>
         <ScrollView VerticalOptions="FillAndExpand">
             <StackLayout>
-                <Image Source="{Binding Model.Imagem}" 
+                <Image x:Name="image" Source="{Binding Model.Imagem}" 
                        Aspect="AspectFill"
                        BackgroundColor="#ddd" />
+                <ActivityIndicator BindingContext="{x:Reference image}" 
+                                   IsRunning="{Binding IsLoading}" 
+                                   IsVisible="{Binding IsLoading}" />
                 <StackLayout Spacing="0" Padding="10">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="4*" />
                         </Grid.ColumnDefinitions>
-                        <Image Source="{Binding Model.Logo}" 
+                        <Image x:Name="logo" Source="{Binding Model.Logo}" 
                                Aspect="AspectFit" 
                                Grid.Row="0"
                                Grid.Column="0"/>
+                        <ActivityIndicator BindingContext="{x:Reference logo}" 
+                                                   IsRunning="{Binding IsLoading}" 
+                                                   IsVisible="{Binding IsLoading}" />
                         <StackLayout Spacing="0" 
                                      Grid.Row="0" 
                                      Grid.Column="1" 

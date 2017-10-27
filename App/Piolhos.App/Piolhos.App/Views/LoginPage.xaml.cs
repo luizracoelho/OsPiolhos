@@ -20,5 +20,22 @@ namespace Piolhos.App.Views
             };
             BindingContext = viewModel;
 		}
-	}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            telefoneEntry.Focus();
+        }
+
+        private void TelefoneEntry_Completed(object sender, System.EventArgs e)
+        {
+            senhaEntry.Focus();
+        }
+
+        private void SenhaEntry_Completed(object sender, System.EventArgs e)
+        {
+            entrarCommand.Command.Execute(null);
+        }
+    }
 }

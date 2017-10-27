@@ -7,7 +7,7 @@
              Title="Alterar Cadastro">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="Confirmar" Icon="icon_check.png" Command="{Binding AlterarCadastroCommand}">
+        <ToolbarItem x:Name="confirmarEntry" Name="Confirmar" Command="{Binding AlterarCadastroCommand}">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource" Android="icon_check.png"></OnPlatform>
             </ToolbarItem.Icon>
@@ -19,22 +19,28 @@
             <StackLayout Padding="10"
                          HorizontalOptions="FillAndExpand">
                 <Label Text="Nome" />
-                <Entry Text="{Binding Model.Nome}"
+                <Entry x:Name="nomeEntry"
+                       Text="{Binding Model.Nome}"
                        Placeholder="Piolho da Silva"
                        HorizontalOptions="FillAndExpand"
-                       Style="{StaticResource EntryStyle}"/>
+                       Style="{StaticResource EntryStyle}"
+                       Completed="NomeEntry_Completed" />
                 <Label Text="E-Mail" />
-                <Entry Text="{Binding Model.Email}"
+                <Entry x:Name="emailEntry"
+                       Text="{Binding Model.Email}"
                        Placeholder="piolho@ospiolhos.com.br"
                        HorizontalOptions="FillAndExpand"
                        Keyboard="Email"
-                       Style="{StaticResource EntryStyle}"/>
+                       Style="{StaticResource EntryStyle}"
+                       Completed="EmailEntry_Completed" />
                 <Label Text="Telefone" />
-                <Entry Text="{Binding Model.Telefone, Converter={lc:TelephoneConverter}}" 
+                <Entry x:Name="telefoneEntry"
+                       Text="{Binding Model.Telefone, Converter={lc:TelephoneConverter}}" 
                        Placeholder="Número"
                        Keyboard="Telephone" 
                        HorizontalOptions="FillAndExpand" 
-                       Style="{StaticResource EntryStyle}"/>
+                       Style="{StaticResource EntryStyle}"
+                       Completed="TelefoneEntry_Completed" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

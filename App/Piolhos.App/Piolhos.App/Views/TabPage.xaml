@@ -14,23 +14,6 @@
     </TabbedPage.BarBackgroundColor>
 
     <pages:ParceirosPage />
-
-    <ContentPage Title="Promoções">
-        <ContentPage.Icon>
-            <OnPlatform x:TypeArguments="FileImageSource" iOS="icon_flame.png"></OnPlatform>
-        </ContentPage.Icon>
-        <StackLayout Padding="10">
-            <Label Text="Mostrando as promoções."/>
-        </StackLayout>
-    </ContentPage>
-
-    <ContentPage Title="Eventos">
-        <ContentPage.Icon>
-            <OnPlatform x:TypeArguments="FileImageSource" iOS="icon_calendar.png"></OnPlatform>
-        </ContentPage.Icon>
-        <StackLayout Padding="10">
-            <Label Text="Mostrando os eventos."/>
-        </StackLayout>
-    </ContentPage>
-
+    <pages:PromocoesPage />
+    <pages:EventosPage />
 </TabbedPage>

@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Piolhos.App.Views.ParceirosPage"
-             Title="Piolhos Points">
+             Title="Parceiros"
+             Icon="icon_location.png">
 
     <ContentPage.Icon>
-        <OnPlatform x:TypeArguments="FileImageSource" iOS="icon_location.png"></OnPlatform>
+        <OnPlatform x:TypeArguments="FileImageSource" iOS="toolbarIconLocation"></OnPlatform>
     </ContentPage.Icon>
 
     <ContentPage.Content>
@@ -27,9 +28,12 @@
                         <ViewCell>
                             <StackLayout Padding="10, 20"
                                 Orientation="Horizontal">
-                                <Image Source="{Binding Logo}" 
+                                <Image x:Name="image" Source="{Binding Logo}" 
                                        Aspect="AspectFit" 
                                        WidthRequest="64"/>
+                                <ActivityIndicator BindingContext="{x:Reference image}" 
+                                                   IsRunning="{Binding IsLoading}" 
+                                                   IsVisible="{Binding IsLoading}" />
                                 <StackLayout Spacing="0" 
                                              Grid.Row="0" 
                                              Grid.Column="1">

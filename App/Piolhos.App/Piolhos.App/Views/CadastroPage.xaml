@@ -7,7 +7,7 @@
              Title="Criar Conta">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="Confirmar" Command="{Binding CriarContaCommand}">
+        <ToolbarItem x:Name="confirmarCommand" Name="Confirmar" Command="{Binding CriarContaCommand}">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource" Android="icon_check.png"></OnPlatform>
             </ToolbarItem.Icon>
@@ -20,32 +20,42 @@
                          HorizontalOptions="FillAndExpand"
                          VerticalOptions="FillAndExpand">
                 <Label Text="Nome" />
-                <Entry Text="{Binding Model.Nome}"
+                <Entry x:Name="nomeEntry"
+                       Text="{Binding Model.Nome}"
                        Placeholder="Piolho da Silva"
                        HorizontalOptions="FillAndExpand"
-                       Style="{StaticResource EntryStyle}"/>
+                       Style="{StaticResource EntryStyle}" 
+                       Completed="NomeEntry_Completed"/>
                 <Label Text="E-Mail" />
-                <Entry Text="{Binding Model.Email}"
+                <Entry x:Name="emailEntry"
+                       Text="{Binding Model.Email}"
                        Placeholder="piolho@ospiolhos.com.br"
                        HorizontalOptions="FillAndExpand"
                        Keyboard="Email"
-                       Style="{StaticResource EntryStyle}"/>
+                       Style="{StaticResource EntryStyle}" 
+                       Completed="EmailEntry_Completed" />
                 <Label Text="Telefone" />
-                <Entry Text="{Binding Model.Telefone, Converter={lc:TelephoneConverter}}" 
+                <Entry x:Name="telefoneEntry"
+                       Text="{Binding Model.Telefone, Converter={lc:TelephoneConverter}}" 
                        Placeholder="Número"
                        Keyboard="Telephone" 
                        HorizontalOptions="FillAndExpand" 
-                       Style="{StaticResource EntryStyle}"/>
+                       Style="{StaticResource EntryStyle}" 
+                       Completed="TelefoneEntry_Completed" />
                 <Label Text="Senha" />
-                <Entry Text="{Binding Model.Senha}"
+                <Entry x:Name="senhaEntry"
+                       Text="{Binding Model.Senha}"
                        IsPassword="True" 
                        HorizontalOptions="FillAndExpand"
-                       Style="{StaticResource EntryStyle}"/>
+                       Style="{StaticResource EntryStyle}" 
+                       Completed="SenhaEntry_Completed" />
                 <Label Text="Confirmar Senha" />
-                <Entry Text="{Binding ConfirmarSenha}"
+                <Entry x:Name="confirmarEntry"
+                       Text="{Binding ConfirmarSenha}"
                        IsPassword="True" 
                        HorizontalOptions="FillAndExpand"
-                       Style="{StaticResource EntryStyle}"/>
+                       Style="{StaticResource EntryStyle}" 
+                       Completed="ConfirmarEntry_Completed" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

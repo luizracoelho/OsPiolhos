@@ -35,7 +35,10 @@
   <ItemGroup>
     <Compile Include="Base\BaseEntity.cs" />
     <Compile Include="Empresa.cs" />
+    <Compile Include="Promocao.cs" />
+    <Compile Include="Evento.cs" />
     <Compile Include="GeoLocalizacao.cs" />
+    <Compile Include="Informacao.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Notificacao.cs" />
     <Compile Include="Usuario.cs" />

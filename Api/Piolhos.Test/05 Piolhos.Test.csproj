@@ -59,17 +59,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Piolhos.Logic\Piolhos.Logic.csproj">
+    <ProjectReference Include="..\Piolhos.Logic\03 Piolhos.Logic.csproj">
       <Project>{1755febd-a3a8-423e-92ff-fb2b74c4dc9f}</Project>
-      <Name>Piolhos.Logic</Name>
+      <Name>03 Piolhos.Logic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Piolhos.Repository\Piolhos.Repository.csproj">
+    <ProjectReference Include="..\Piolhos.Repository\02 Piolhos.Repository.csproj">
       <Project>{05bf639d-f393-47ff-97e8-44f0efe085a6}</Project>
-      <Name>Piolhos.Repository</Name>
+      <Name>02 Piolhos.Repository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Piolhos\Piolhos.csproj">
+    <ProjectReference Include="..\Piolhos\01 Piolhos.csproj">
       <Project>{f8f8be9a-f27d-46bf-91b9-5bc329f4e107}</Project>
-      <Name>Piolhos</Name>
+      <Name>01 Piolhos</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

@@ -7,7 +7,7 @@
              Title="Fazer Login">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="Entrar" Command="{Binding LoginCommand}">
+        <ToolbarItem x:Name="entrarCommand" Name="Entrar" Command="{Binding LoginCommand}">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource" Android="icon_check.png"></OnPlatform>
             </ToolbarItem.Icon>
@@ -22,17 +22,19 @@
                 <StackLayout VerticalOptions="CenterAndExpand">
                     <Image Source="login.png" HorizontalOptions="Center"/>
                     <Label Text="Telefone" />
-                    <Entry Text="{Binding Model.Telefone, Converter={lc:TelephoneConverter}}" 
+                    <Entry x:Name="telefoneEntry"
+                       Text="{Binding Model.Telefone, Converter={lc:TelephoneConverter}}" 
                        Placeholder="DDD+Número"
                        Keyboard="Telephone" 
                        HorizontalOptions="FillAndExpand" 
-                       Style="{StaticResource EntryStyle}" />
+                       Style="{StaticResource EntryStyle}" Completed="TelefoneEntry_Completed"/>
                     <Label Text="Senha" />
-                    <Entry Text="{Binding Model.Senha}"
+                    <Entry x:Name="senhaEntry" Text="{Binding Model.Senha}"
                        Placeholder="Sua Senha"
                        IsPassword="True" 
                        HorizontalOptions="FillAndExpand"
-                       Style="{StaticResource EntryStyle}"/>
+                       Style="{StaticResource EntryStyle}" 
+                       Completed="SenhaEntry_Completed" />
                 </StackLayout>
             </StackLayout>
         </ScrollView>
